@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Secret Santa Gift Swap</title>
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div id="snow" aria-hidden="true"></div>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="paper"><feDropShadow dx="2" dy="3" stdDeviation="1.5" flood-opacity=".35"/></filter>
+    <symbol id="flake" viewBox="-50 -50 100 100">
+      <g fill="#fff" stroke="#cfe8ff" stroke-width="1.5">
+        <g transform="rotate(0)"><rect x="-4" y="-46" width="8" height="46" rx="3"/><path d="M0-30 L-14-42 L-10-46 L0-36 L10-46 L14-42Z"/><path d="M0-14 L-10-24 L-6-27 L0-20 L6-27 L10-24Z"/></g><g transform="rotate(60)"><rect x="-4" y="-46" width="8" height="46" rx="3"/><path d="M0-30 L-14-42 L-10-46 L0-36 L10-46 L14-42Z"/><path d="M0-14 L-10-24 L-6-27 L0-20 L6-27 L10-24Z"/></g><g transform="rotate(120)"><rect x="-4" y="-46" width="8" height="46" rx="3"/><path d="M0-30 L-14-42 L-10-46 L0-36 L10-46 L14-42Z"/><path d="M0-14 L-10-24 L-6-27 L0-20 L6-27 L10-24Z"/></g><g transform="rotate(180)"><rect x="-4" y="-46" width="8" height="46" rx="3"/><path d="M0-30 L-14-42 L-10-46 L0-36 L10-46 L14-42Z"/><path d="M0-14 L-10-24 L-6-27 L0-20 L6-27 L10-24Z"/></g><g transform="rotate(240)"><rect x="-4" y="-46" width="8" height="46" rx="3"/><path d="M0-30 L-14-42 L-10-46 L0-36 L10-46 L14-42Z"/><path d="M0-14 L-10-24 L-6-27 L0-20 L6-27 L10-24Z"/></g><g transform="rotate(300)"><rect x="-4" y="-46" width="8" height="46" rx="3"/><path d="M0-30 L-14-42 L-10-46 L0-36 L10-46 L14-42Z"/><path d="M0-14 L-10-24 L-6-27 L0-20 L6-27 L10-24Z"/></g>
+        <circle r="8"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="scene" aria-hidden="true">
+  <svg class="sleigh" viewBox="0 0 420 140">
+    <g filter="url(#paper)">
+      <!-- Rudolph -->
+      <g class="rudolph">
+        <path d="M40 70 q-8-30 6-40 M46 32 l-10-12 M46 32 l8-14 M58 66 q8-30 -4-38 M54 30 l4-16 M54 30 l12-8" stroke="#7a4a20" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <ellipse cx="95" cy="92" rx="42" ry="20" fill="#a0602c"/>
+        <rect x="64" y="100" width="8" height="30" rx="3" fill="#7a4a20"/><rect x="80" y="104" width="8" height="28" rx="3" fill="#7a4a20"/>
+        <rect x="108" y="104" width="8" height="28" rx="3" fill="#7a4a20"/><rect x="122" y="100" width="8" height="30" rx="3" fill="#7a4a20"/>
+        <path d="M60 85 q-6-20 -6-30" stroke="#a0602c" stroke-width="16" stroke-linecap="round" fill="none"/>
+        <ellipse cx="45" cy="62" rx="22" ry="15" fill="#a0602c"/>
+        <circle cx="46" cy="57" r="3.5" fill="#222"/>
+        <circle class="nose" cx="24" cy="66" r="8" fill="#ff2a2a"/>
+      </g>
+      <path d="M135 92 L190 92" stroke="#e8c14a" stroke-width="3"/>
+      <!-- Sleigh -->
+      <path d="M185 70 h130 q20 0 20 -30 h12 q0 55 -40 60 h-122z" fill="#d21f2b"/>
+      <path d="M180 118 h160 q22 0 24 -18" stroke="#e8c14a" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <rect x="205" y="100" width="6" height="18" fill="#e8c14a"/><rect x="300" y="100" width="6" height="18" fill="#e8c14a"/>
+      <!-- gift sack -->
+      <rect x="292" y="30" width="34" height="36" rx="4" fill="#1f9d4a"/><rect x="305" y="30" width="8" height="36" fill="#ffd23f"/>
+      <!-- Santa -->
+      <ellipse cx="250" cy="62" rx="26" ry="20" fill="#d21f2b"/>
+      <circle cx="250" cy="38" r="15" fill="#ffd9b8"/>
+      <path d="M236 42 q14 26 28 0 q-4 18 -14 20 q-10 -2 -14 -20z" fill="#fff"/>
+      <path d="M234 30 q16 -22 34 -2 l6 -4 q-2 -12 -18 -14 q-20 0 -22 20z" fill="#d21f2b"/>
+      <rect x="232" y="27" width="36" height="7" rx="3" fill="#fff"/><circle cx="276" cy="22" r="5" fill="#fff"/>
+      <circle cx="245" cy="37" r="2" fill="#222"/><circle cx="255" cy="37" r="2" fill="#222"/>
+      <g class="wave"><path d="M228 56 q-16 -10 -18 -30" stroke="#d21f2b" stroke-width="10" fill="none" stroke-linecap="round"/><circle cx="210" cy="24" r="7" fill="#fff"/></g>
+    </g>
+  </svg>
+  <h1>Secret Santa<br><span>Gift Swap</span></h1>
+</header>
+
+<main id="app">
+  <section id="v-home" class="card view">
+    <h2>Who's playing?</h2>
+    <ul id="slots" class="slots"></ul>
+    <form id="joinForm" class="stack">
+      <label>Your name <input id="name" maxlength="30" autocomplete="off" required></label>
+      <button class="btn green">Join the swap</button>
+    </form>
+    <p class="muted" id="fullMsg" hidden>Both spots are taken. Already playing? Use your code below.</p>
+    <p class="muted">Test copy. Open a second tab in this browser to play as the other player.</p>
+    <p><button type="button" id="resetBtn" class="btn red">Reset test game</button></p>
+    <details class="backup"><summary>I have a code</summary>
+      <form id="codeForm" class="stack"><input id="codeIn" inputmode="numeric" pattern="\d{5}" maxlength="5" placeholder="5-digit code" required><button class="btn red">Open my page</button></form>
+    </details>
+  </section>
+
+  <section id="v-ideas" class="card view" hidden>
+    <h2>Hi <span class="me"></span>! Four gift ideas</h2>
+    <p class="muted">Enter exactly four different ideas. Once submitted they're locked in.</p>
+    <p id="waitJoin" class="pill" hidden>Waiting for the other player to join before you can submit.</p>
+    <form id="ideasForm" class="stack">
+      <input class="idea" maxlength="120" placeholder="Gift idea 1" required>
+      <input class="idea" maxlength="120" placeholder="Gift idea 2" required>
+      <input class="idea" maxlength="120" placeholder="Gift idea 3" required>
+      <input class="idea" maxlength="120" placeholder="Gift idea 4" required>
+      <button class="btn red" id="submitIdeas">Wrap them up!</button>
+    </form>
+  </section>
+
+  <section id="v-wait" class="card view" hidden>
+    <svg class="gift small" viewBox="-50 -50 100 100"><use href="#flake"/></svg>
+    <h2>Your code</h2>
+    <div class="code" id="myCode"></div>
+    <p class="muted">Save this code. This tab remembers you until you close it.</p>
+    <p class="pill"><span class="status-dot"></span> Waiting on other participant for gift ideas.</p>
+    <p class="muted"><span class="other"></span> <span id="otherCheck"></span></p>
+    <button class="btn green" id="recheck">Check again</button>
+  </section>
+
+  <section id="v-gift" class="card view" hidden>
+    <h2>Both lists are in! 🎄</h2>
+    <p class="muted">Tap your present to open it.</p>
+    <button id="giftBtn" class="giftBtn" aria-label="Open your present">
+      <svg viewBox="0 0 120 130" class="gift"><g filter="url(#paper)">
+        <g class="lid"><rect x="8" y="34" width="104" height="22" rx="4" class="wrap2"/><rect x="54" y="34" width="12" height="22" fill="#ffd23f"/>
+          <path d="M60 34 q-30 -30 -34 -6 q4 10 34 6 q30 4 34 -6 q-4 -24 -34 6z" fill="#ffd23f"/></g>
+        <rect x="14" y="56" width="92" height="66" rx="4" class="wrap"/><rect x="54" y="56" width="12" height="66" fill="#ffd23f"/>
+      </g></svg>
+    </button>
+    <p class="muted">Your code <b class="codeSmall"></b> will be used up when you open it.</p>
+  </section>
+
+  <section id="v-reveal" class="card view" hidden>
+    <h2>Your gift ideas</h2>
+    <ol id="revealList" class="reveal"></ol>
+    <div class="countdown" id="cdBox" hidden>
+      <p>📸 <b>Take a screenshot now!</b> These disappear forever in</p>
+      <div id="cd" class="cd">2:00</div>
+    </div>
+  </section>
+
+  <section id="v-done" class="card view" hidden>
+    <h2>All wrapped up 🎁</h2>
+    <p>Your list has been erased. Merry Christmas!</p>
+  </section>
+
+  <p id="err" class="err" role="alert"></p>
+</main>
+<footer class="ground" aria-hidden="true">
+  <svg viewBox="0 0 400 60" preserveAspectRatio="none"><path d="M0 30 q50-25 100 0 t100 0 t100 0 t100 0 V60 H0z" fill="#fff" filter="url(#paper)"/></svg>
+</footer>
+<script src="app.js"></script>
+</body></html>
