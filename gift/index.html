@@ -53,6 +53,16 @@
 </header>
 
 <main id="app">
+  <div class="sharebox">
+    <div class="panel">
+      <p class="muted">Invite link. Each player opens it once, on their own phone.</p>
+      <div class="row">
+        <input id="shareUrl" readonly aria-label="Invite link">
+        <button type="button" id="copyLink" class="btn green">Copy link</button>
+      </div>
+      <p id="netStatus" class="muted"></p>
+    </div>
+  </div>
   <section id="v-home" class="card view">
     <h2>Who's playing?</h2>
     <ul id="slots" class="slots"></ul>
@@ -61,8 +71,7 @@
       <button class="btn green">Join the swap</button>
     </form>
     <p class="muted" id="fullMsg" hidden>Both spots are taken. Already playing? Use your code below.</p>
-    <p class="muted">Test copy. Open a second tab in this browser to play as the other player.</p>
-    <p><button type="button" id="resetBtn" class="btn red">Reset test game</button></p>
+    <p><button type="button" id="resetBtn" class="btn red">Reset game</button></p>
     <details class="backup"><summary>I have a code</summary>
       <form id="codeForm" class="stack"><input id="codeIn" inputmode="numeric" pattern="\d{5}" maxlength="5" placeholder="5-digit code" required><button class="btn red">Open my page</button></form>
     </details>
